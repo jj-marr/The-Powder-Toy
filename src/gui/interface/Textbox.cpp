@@ -239,7 +239,7 @@ bool Textbox::CharacterValid(int character)
 }
 
 // TODO: proper unicode validation
-bool Textbox::StringValid(String text)
+bool Textbox::StringValid(const String& text)
 {
 	for (String::value_type c : text)
 		if (!CharacterValid(c))
@@ -475,7 +475,7 @@ void Textbox::OnTextInput(String text)
 	InsertText(text);
 }
 
-void Textbox::InsertText(String text)
+void Textbox::InsertText(const String& text)
 {
 	if (StringValid(text) && !ReadOnly)
 	{

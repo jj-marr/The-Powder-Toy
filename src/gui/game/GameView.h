@@ -226,7 +226,7 @@ public:
 	void NotifyPlaceSaveChanged(GameModel * sender);
 	void NotifyTransformedPlaceSaveChanged(GameModel *sender);
 	void NotifyNotificationsChanged(GameModel * sender);
-	void NotifyLogChanged(GameModel * sender, String entry);
+	void NotifyLogChanged(GameModel * sender, const String& entry);
 	void NotifyToolTipChanged(GameModel * sender);
 	void NotifyInfoTipChanged(GameModel * sender);
 	void NotifyQuickOptionsChanged(GameModel * sender);

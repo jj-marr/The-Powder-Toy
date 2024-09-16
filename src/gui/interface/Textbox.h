@@ -18,7 +18,7 @@ struct TextboxDefocusAction
 class Textbox : public Label
 {
 	void AfterTextChange(bool changed);
-	void InsertText(String text);
+	void InsertText(const String& text);
 	void StartTextEditing();
 	void StopTextEditing();
 
@@ -49,7 +49,7 @@ public:
 	void TabFocus();
 	//Determines if the given character is valid given the input type
 	bool CharacterValid(int character);
-	bool StringValid(String text);
+	bool StringValid(const String& text);
 
 	void Tick(float dt) override;
 	void OnContextMenuAction(int item) override;

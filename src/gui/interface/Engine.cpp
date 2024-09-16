@@ -238,7 +238,7 @@ void Engine::onTextInput(String text)
 	}
 }
 
-void Engine::onTextEditing(String text, int start)
+void Engine::onTextEditing(const String& text, int start)
 {
 	if (textInput)
 	{

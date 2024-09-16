@@ -1946,7 +1946,7 @@ void GameView::NotifyZoomChanged(GameModel * sender)
 	zoomEnabled = sender->GetZoomEnabled();
 }
 
-void GameView::NotifyLogChanged(GameModel * sender, String entry)
+void GameView::NotifyLogChanged(GameModel * sender, const String& entry)
 {
 	logEntries.push_front(std::pair<String, int>(entry, 600));
 	if (logEntries.size() > 20)
