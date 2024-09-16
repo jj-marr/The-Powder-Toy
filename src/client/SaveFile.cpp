@@ -1,6 +1,8 @@
 #include "SaveFile.h"
 #include "GameSave.h"
 #include "common/platform/Platform.h"
+s
+#include <utility>
 
 SaveFile::SaveFile(const ByteString& filename, bool newLazyLoad):
 	filename(filename),
@@ -65,7 +67,7 @@ const ByteString &SaveFile::GetName() const
 
 void SaveFile::SetFileName(ByteString fileName)
 {
-	this->filename = fileName;
+	this->filename = std::move(fileName);
 }
 
 const String &SaveFile::GetDisplayName() const
@@ -75,7 +77,7 @@ const String &SaveFile::GetDisplayName() const
 
 void SaveFile::SetDisplayName(String displayName)
 {
-	this->displayName = displayName;
+	this->displayName = std::move(displayName);
 }
 
 const String &SaveFile::GetError() const
@@ -85,5 +87,5 @@ const String &SaveFile::GetError() const
 
 void SaveFile::SetLoadingError(String error)
 {
-	loadingError = error;
+	loadingError = std::move(error);
 }

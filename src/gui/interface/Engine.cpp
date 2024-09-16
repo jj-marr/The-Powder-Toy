@@ -7,6 +7,7 @@
 #include "gui/dialogues/ConfirmPrompt.h"
 #include <cmath>
 #include <cstring>
+#include <utility>
 
 using namespace ui;
 
@@ -234,7 +235,7 @@ void Engine::onTextInput(String text)
 	if (textInput)
 	{
 		if (state_ && !ignoreEvents)
-			state_->DoTextInput(text);
+			state_->DoTextInput(std::move(text));
 	}
 }
 
@@ -317,7 +318,7 @@ void Engine::onClose()
 void Engine::onFileDrop(ByteString filename)
 {
 	if (state_)
-		state_->DoFileDrop(filename);
+		state_->DoFileDrop(std::move(filename));
 }
 
 void Engine::StartTextInput()
