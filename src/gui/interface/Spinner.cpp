@@ -25,12 +25,13 @@ void Spinner::Draw(const Point& screenPos)
 	int baseY = screenPos.Y+(Size.Y/2);
 	int lineInner = (Size.X/2);
 	int lineOuter = (Size.X/2)+3;
-	for(float t = 0.0f; t < 6.0f; t+=0.25f)
+	for(int t = 0; t < 24; t++)
 	{
+		float delta = t / 4.0f;
 		g->DrawLine(
-			{ int(baseX+(sin(cValue+t)*lineInner)), int(baseY+(cos(cValue+t)*lineInner)) },
-			{ int(baseX+(sin(cValue+t)*lineOuter)), int(baseY+(cos(cValue+t)*lineOuter)) },
-			RGB<uint8_t>(int((t/6)*255), int((t/6)*255), int((t/6)*255)));
+			{ int(baseX+(sin(cValue+delta)*lineInner)), int(baseY+(cos(cValue+t)*lineInner)) },
+			{ int(baseX+(sin(cValue+delta)*lineOuter)), int(baseY+(cos(cValue+t)*lineOuter)) },
+			RGB<uint8_t>(int((delta/6)*255), int((delta/6)*255), int((delta/6)*255)));
 	}
 }
 Spinner::~Spinner()
